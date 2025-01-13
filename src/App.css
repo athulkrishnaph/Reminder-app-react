@@ -1,0 +1,256 @@
+*{
+  
+  font-family: "Space Grotesk", serif;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff9a;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 50vw;
+  height: 70vh;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+
+}
+
+.input-container {
+  margin-top: 40px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="text"],input[type="datetime-local"]{
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  margin-left: 10px;
+  font-size: 1rem;
+  background-color: #4444444e;
+  color: #211f1fa0;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff; 
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #555; 
+}
+
+button:active {
+  background-color: #444;
+}
+
+.reminder-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #fff transparent;
+  text-align: left;
+}
+
+.reminder-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.reminder-list::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.reminder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reminder-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.timestamp,
+.created-at {
+  display: block;
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #444;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #666;
+}
+
+.delete-btn:hover {
+  background-color: #777;
+}
+
+.edit-btn:active,
+.delete-btn:active {
+  background-color: #555;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pagination-btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.pagination-btn:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.pagination-btn:hover {
+  background-color: #555;
+}
+
+.no-reminders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  font-size: 1.2rem;
+  color: #bbb;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .app {
+    width: 80vw;
+    height: auto;
+    padding: 15px;
+  }
+
+  .input-container input[type="text"],
+  .input-container input[type="datetime-local"] {
+    width: 100%;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  .reminder-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    width: 95vw;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .input-container input[type="text"],
+  .input-container input[type="datetime-local"] {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .input-container button {
+    font-size: 0.9rem;
+  }
+
+  .reminder-item .reminder-text {
+    font-size: 0.9rem;
+  }
+
+  .reminder-item .timestamp,
+  .reminder-item .created-at {
+    font-size: 0.8rem;
+  }
+
+  .pagination span {
+    font-size: 0.9rem;
+  }
+}
