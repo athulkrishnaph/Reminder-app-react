@@ -192,18 +192,22 @@ button:active {
 
 @media (max-width: 768px) {
   .app {
-    width: 80vw;
-    height: auto;
-    padding: 15px;
+    width: 100vw; /* Occupies entire width */
+    height: 100vh; /* Occupies entire height */
+    padding: 10px; /* Adjust padding */
+    box-shadow: none; /* Optional: Remove box-shadow for a cleaner look */
+    border-radius: 0; /* Optional: Remove border-radius */
   }
 
   .input-container input[type="text"],
   .input-container input[type="datetime-local"] {
-    width: 100%;
+    width: 100%; /* Full width of input fields */
+    box-sizing: border-box; /* Ensures proper padding and margin */
   }
 
   .input-container {
     flex-direction: column;
+    gap: 15px; /* More spacing for better usability */
   }
 
   .reminder-item {
@@ -223,22 +227,27 @@ button:active {
 
 @media (max-width: 480px) {
   .app {
-    width: 95vw;
-    padding: 10px;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    padding: 8px; /* Adjust padding for smaller screens */
+    box-shadow: none;
+    border-radius: 0;
   }
 
   h1 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   .input-container input[type="text"],
   .input-container input[type="datetime-local"] {
     font-size: 0.9rem;
     padding: 8px;
+    width: 100%; /* Full width */
   }
 
   .input-container button {
     font-size: 0.9rem;
+    width: 100%; /* Ensure buttons take full width */
   }
 
   .reminder-item .reminder-text {
